@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install base packages
 su - 
 apt-get install sudo
@@ -28,4 +30,5 @@ apt-get install sudo
   lsb-release \
   redis-server \
   memcached \
-  libmemcached-tools
+  libmemcached-tools \ 
+  neovim

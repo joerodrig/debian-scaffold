@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd ~
 # Postgresql https://www.postgresql.org/download/linux/debian/
 # Create the file repository configuration:
