@@ -47,8 +47,9 @@ curl https://pyenv.run | bash
 echo "installing "
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 
-exec $SHELL
-
 echo "Make sure to add the following to your .bashrc:"
 echo "source /usr/local/share/chruby/chruby.sh"
 echo "source /usr/local/share/chruby/auto.sh"
+rm -rf chruby-*
+
+exec $SHELL
