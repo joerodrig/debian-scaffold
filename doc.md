@@ -1,4 +1,8 @@
-Setting up a development VM with SSH using Tailscale
+# Setting up a development VM with SSH using Tailscale
+
+# Why?
+Inspired by the eternal struggle of trying to do web development on an M1 mac in 2021
+
 
 Prerequisites:
 - Install VirtualBox VM
@@ -11,16 +15,24 @@ Prerequisites:
 4. Install additional utilities for development: `bash ./install-utils.sh`
 
 Installs: 
-- Ruby 3.0.2 
 - Postgresql 13
-- Python 3.7
-- Node 14.8.1
+  - Start: sudo systemctl start postgresql@13-main.service
+  - Stop: sudo systemctl stop postgresql@13-main.service
+  - Status: systemctl status postgresql@13-main.service
 - Tailscale
-  -> sudo tailscale up
-  -> tailscale ip -4
-
+  - Start: sudo tailscale up
+  - View private ipv4 address: tailscale ip -4
 - Openssh server
+  - Start: sudo systemctl start ssh
+  - Stop: sudo systemctl stop ssh
+  - Status: systemctl status ssh
 - Redis
+  - Start: sudo systemctl start redis
+  - Stop: sudo systemctl stop redis
+  - Status: systemctl status redis
 - Memcached
+  - Start: sudo systemctl start memcached
+  - Stop: sudo systemctl stop memcached
+  - Status: systemctl status memcached
 - Git
 
