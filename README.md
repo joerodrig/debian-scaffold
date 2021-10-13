@@ -3,10 +3,12 @@
 # Why?
 Inspired by the eternal struggle of trying to do software development on an M1 mac in 2021.
 
+This setup allows you to keep your development environment running on a Debian server in a VM, while you develop on your host machine. The host can either be the machine you're running the VM on, or a remote machine that you can ssh into using tailscale. The benefits of this approach are that you can 
 
 ## Prerequisites:
-- Install VirtualBox VM
-- Download a Debian base image for your architecture(https://www.debian.org/distrib/netinst)
+- [VirtualBox VM](https://www.virtualbox.org/wiki/Downloads)
+- A [Debian base image]((https://www.debian.org/distrib/netinst)) for your architecture
+- [Tailscale](https://tailscale.com/download)
 
 ## Steps
 1. Add the Debian ISO to a new VirtualBox machine. I specified 4vCPU, 8GB Ram, and 16GB fixed-size SSD
@@ -17,8 +19,15 @@ Inspired by the eternal struggle of trying to do software development on an M1 m
   - [Set up Github ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
   - [Set up Github gpg key](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account)
   - Authenticate VM and Host machine to Tailscale
-6. Install the Remote Explorer(Microsft) extension in VSCode
-7. ssh into the VM using the private Tailscale IP(run `tailscale ip -4` in the VM to get it, or view it in the Tailscale dashboard).
+6. Add the IP from your VM to your ssh config
+```shell
+# File: ~/.ssh/config
+Host dev-server
+HostName <TAILSCALE IP>
+User <USER>
+```
+7. Install the Remote Explorer(Microsft) extension in VSCode on host machine
+8. ssh into the VM using the hostname added to your ssh config.
 
 ## Installs: 
 - Postgresql 13
