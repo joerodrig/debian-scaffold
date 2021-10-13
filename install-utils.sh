@@ -39,6 +39,14 @@ cd chruby-0.3.9/
 sudo make install
 cd ~/
 
+# ruby-install - https://github.com/postmodern/ruby-install
+wget -O ruby-install-0.8.3.tar.gz https://github.com/postmodern/ruby-install/archive/v0.8.3.tar.gz
+tar -xzvf ruby-install-0.8.3.tar.gz
+cd ruby-install-0.8.3/
+sudo make install
+cd ~
+rm -rf ruby-install-*
+
 # Pyenv - https://github.com/pyenv/pyenv-installer
 echo "Installing Pyenv"
 curl https://pyenv.run | bash
@@ -50,6 +58,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 echo "Make sure to add the following to your .bashrc:"
 echo "source /usr/local/share/chruby/chruby.sh"
 echo "source /usr/local/share/chruby/auto.sh"
+echo "export PATH=\"$HOME/.pyenv/bin:$PATH\""
+echo "eval \"$(pyenv init --path)\""
+echo "eval \"$(pyenv virtualenv-init -)\""
+echo "eval \"$(pyenv virtualenv-init -)\""
+
 rm -rf chruby-*
 
 exec $SHELL
