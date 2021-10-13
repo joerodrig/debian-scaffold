@@ -3,7 +3,9 @@
 # Why?
 Inspired by the eternal struggle of trying to do software development on an M1 mac in 2021.
 
-This setup allows you to keep your development environment running on a Debian server in a VM, while you develop on your host machine. The host can either be the machine you're running the VM on, or a remote machine that you can ssh into using tailscale. The benefits of this approach are that you can 
+This setup allows you to keep your development environment running on a Debian server in a VM, while you develop on your host machine. The host can either be the machine you're running the VM on, or a remote machine that you can ssh into using tailscale. 
+
+The main benefits of this approach are that you don't need to run heavy servers on the same machine your developing on, so if your primary dev machine is constrained by RAM or CPU, offloading that to a separate machine can help speed up development.
 
 ## Prerequisites:
 - [VirtualBox VM](https://www.virtualbox.org/wiki/Downloads)
