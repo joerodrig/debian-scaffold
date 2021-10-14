@@ -3,12 +3,17 @@
 # Install base packages
 su - 
 apt-get install sudo
-  -> usermod -aG sudo dev
-- Base packages
-  -> sudo apt-get install make \
+usermod -aG sudo dev
+
+# Base packages
+su dev
+sudo apt-get install make \
   git \
   build-essential \ 
+  cmake \
   libssl-dev \ 
+  libpq-dev \
+  unzip \
   zlib1g-dev \
   libbz2-dev \ 
   libreadline-dev \

@@ -20,7 +20,7 @@ The main benefits of this approach are that you don't need to run heavy servers 
 5. Adding personal information(NOTE: Maintain a snapshot that doesn't contain this information if you intend on sharing the setup)
   - [Set up Github ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
   - [Set up Github gpg key](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account)
-  - Authenticate VM and Host machine to Tailscale
+  - Authenticate VM and Host machine to Tailscale: `sudo tailscale up` from VM
 6. Add the IP from your VM to your ssh config
 ```shell
 # File: ~/.ssh/config
@@ -52,6 +52,12 @@ User <USER>
   - Stop: sudo systemctl stop memcached
   - Status: systemctl status memcached
 - Git
+- Github CLI
+
+## Optional Utils:
+Can be installed via `bash ~/.install-optional-utils.sh`
+- AWS CLI
+- Docker
 
 # Helpful info
 
