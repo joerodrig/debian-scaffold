@@ -9,7 +9,7 @@ The main benefits of this approach are that you don't need to run heavy servers 
 
 ## Prerequisites:
 - [VirtualBox VM](https://www.virtualbox.org/wiki/Downloads)
-- A [Debian base image]((https://www.debian.org/distrib/netinst)) for your architecture
+- A [Debian base image](https://www.debian.org/distrib/netinst) for your architecture
 - [Tailscale](https://tailscale.com/download)
 
 ## Steps
