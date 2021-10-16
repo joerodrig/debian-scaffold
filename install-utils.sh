@@ -21,6 +21,12 @@ curl -fsSL https://pkgs.tailscale.com/stable/debian/bullseye.list | sudo tee /et
 sudo apt-get update
 sudo apt-get install tailscale -y
 
+# Redis
+sudo apt-get install redis-server -y
+
+# Memcached
+sudo apt-get install memcached libmemcached-tools -y
+
 # Chruby
 echo "Installing Chruby"
 wget -O chruby-0.3.9.tar.gz https://github.com/postmodern/chruby/archive/v0.3.9.tar.gz

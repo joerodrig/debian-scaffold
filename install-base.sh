@@ -7,33 +7,29 @@ usermod -aG sudo dev
 
 # Base packages
 su dev
-sudo apt-get install make \
-  git \
+sudo apt-get install apt-transport-https \ 
   build-essential \ 
+  ca-certificates \
   cmake \
-  libssl-dev \ 
-  libpq-dev \
-  unzip \
-  zlib1g-dev \
+  curl \
+  git \
+  gnupg \
   libbz2-dev \ 
-  libreadline-dev \
-  libsqlite3-dev \ 
-  wget \ 
-  curl \ 
-  llvm \
-  libncursesw5-dev \
-  xz-utils \
-  tk-dev \
-  libxml2-dev \
-  libxmlsec1-dev \
   libffi-dev \
   liblzma-dev \
-  apt-transport-https \
-  ca-certificates \
-  curl \
-  gnupg \
+  libpq-dev \
+  libreadline-dev \
+  libsqlite3-dev \ 
+  libssl-dev \ 
+  libncursesw5-dev \
+  libxml2-dev \
+  libxmlsec1-dev \
+  llvm \
   lsb-release \
-  redis-server \
-  memcached \
-  libmemcached-tools \ 
-  neovim
+  make \
+  neovim \
+  tk-dev \
+  unzip \
+  wget \ 
+  xz-utils \
+  zlib1g-dev 

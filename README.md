@@ -53,6 +53,7 @@ User <USER>
   - Status: systemctl status memcached
 - Git
 - Github CLI
+- Neovim
 
 ## Optional Utils:
 Can be installed via `bash ~/.install-optional-utils.sh`
