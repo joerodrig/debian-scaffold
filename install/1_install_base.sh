@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# Install base packages
-su - 
-apt-get install sudo
-usermod -aG sudo dev
-
-# Base packages
-su dev
+# Base packages(run as dev user "su dev")
 sudo apt-get install apt-transport-https \ 
   build-essential \ 
   ca-certificates \
@@ -33,3 +27,8 @@ sudo apt-get install apt-transport-https \
   wget \ 
   xz-utils \
   zlib1g-dev 
+
+# Virtualbox additions
+sudo apt-get install -y dkms \
+  linux-headers-$(uname -r) \
+  module-assistant

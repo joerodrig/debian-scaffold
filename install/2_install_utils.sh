@@ -1,4 +1,5 @@
 #!/bin/bash
+# Run as dev user ("su dev")
 
 cd ~/
 # Postgresql https://www.postgresql.org/download/linux/debian/
@@ -57,14 +58,15 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 sudo apt update
 sudo apt install gh
 
-echo "Make sure to add the following to your .bashrc:"
-echo "source /usr/local/share/chruby/chruby.sh"
-echo "source /usr/local/share/chruby/auto.sh"
-echo "export PATH=\"$HOME/.pyenv/bin:$PATH\""
-echo "eval \"$(pyenv init --path)\""
-echo "eval \"$(pyenv virtualenv-init -)\""
-echo "eval \"$(pyenv virtualenv-init -)\""
-
+printf "****---------------------***"
+printf "Make sure to add the following to your .bashrc:\n"
+printf "source /usr/local/share/chruby/chruby.sh\n"
+printf "source /usr/local/share/chruby/auto.sh\n"
+printf "export PATH=\"$HOME/.pyenv/bin:$PATH\"\n"
+printf "eval \"$(pyenv init --path)\"\n"
+printf "eval \"$(pyenv virtualenv-init -)\"\n"
+printf "eval \"$(pyenv virtualenv-init -)\"\n"
+printf "****---------------------***"
 rm -rf chruby-*
 
 exec $SHELL

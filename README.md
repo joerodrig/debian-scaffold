@@ -12,24 +12,26 @@ The main benefits of this approach are that you don't need to run heavy servers 
 - A [Debian base image](https://www.debian.org/distrib/netinst) for your architecture
 - [Tailscale](https://tailscale.com/download)
 
-## Steps
+## Installation Steps
 1. Add the Debian ISO to a new VirtualBox machine. I specified 4vCPU, 8GB Ram, and 16GB fixed-size SSD
-2. Start VM and run through the installation steps
-3. Install base packages: `bash ./install-base.sh`
-4. Install additional utilities for development: `bash ./install-utils.sh`
-5. Adding personal information(NOTE: Maintain a snapshot that doesn't contain this information if you intend on sharing the setup)
+1. Start VM and run through the installation steps
+1. As root (su -), install root utilities: `bash ./install/0_install_root_utils.sh`
+1. As dev(su dev), install base packages: `bash ./install/1_install_base.sh`
+1. As dev, install utility packages: `bash ./install/2_install_utils.sh`
+1. As dev, install additional utilities for development: `bash ./install/3_install_optional.sh`
+1. Adding personal information(NOTE: Maintain a snapshot that doesn't contain this information if you intend on sharing the setup)
   - [Set up Github ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
   - [Set up Github gpg key](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-new-gpg-key-to-your-github-account)
   - Authenticate VM and Host machine to Tailscale: `sudo tailscale up` from VM
-6. Add the IP from your VM to your ssh config
+1. Add the IP from your VM to your ssh config
 ```shell
 # File: ~/.ssh/config
 Host dev-server
 HostName <TAILSCALE IP>
 User <USER>
 ```
-7. Install the Remote Explorer(Microsft) extension in VSCode on host machine
-8. ssh into the VM using the hostname added to your ssh config.
+1. Install the Remote Explorer(Microsft) extension in VSCode on host machine
+1. ssh into the VM using the hostname added to your ssh config.
 
 ## Installs: 
 - Postgresql 13
