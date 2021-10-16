@@ -58,7 +58,7 @@ User <USER>
 - Neovim
 
 ## Optional Utils:
-Can be installed via `bash ~/.install-optional-utils.sh`
+Can be installed via `bash ./install/2_install_optional.sh`
 - AWS CLI
 - Docker
 
